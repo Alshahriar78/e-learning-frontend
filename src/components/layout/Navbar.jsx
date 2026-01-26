@@ -33,7 +33,7 @@ export const Navbar = () => {
           className={`absolute left-0 top-full w-full z-50 bg-white shadow-md lg:static lg:w-auto lg:shadow-none
           ${open ? "block" : "hidden"} lg:block`}
         >
-          <div className="flex flex-col gap-6 p-6 lg:p-0 lg:flex-row lg:items-center lg:gap-24">
+          <div className="flex flex-col gap-6 p-6 lg:p-0 lg:flex-row lg:items-center lg:gap-75">
 
             {/* Links */}
             <ul className="flex flex-col gap-4 lg:flex-row lg:gap-12">
@@ -56,7 +56,7 @@ export const Navbar = () => {
             </ul>
 
             {/* Buttons */}
-            <div className="flex flex-col gap-3 lg:flex-row lg:gap-6">
+            <div className="flex flex-col  lg:items-end  lg:justify-end gap-3 lg:flex-row lg:gap-6 lg:ml-auto">
               <button className="border border-green-400 rounded-full px-5 py-2 text-blue-400 font-semibold" onClick={() => setShowLogin(true)}>
                 Log in
               </button>

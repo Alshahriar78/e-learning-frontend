@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="text-center sm:text-left">
 
             <div className="w-[100px] h-[100px]">
-                <img src="/public/logo.png" alt="" />
+                <img src="/logo.png" alt="" />
             </div>
             
 
