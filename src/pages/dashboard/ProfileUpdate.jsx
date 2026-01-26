@@ -61,7 +61,7 @@ const ProfileUpdate = () => {
           onChange={handleChange}
           placeholder="Full Name"
           className="border p-2 w-full rounded"
-          required
+          
         />
         <input
           name="address"
@@ -69,7 +69,7 @@ const ProfileUpdate = () => {
           onChange={handleChange}
           placeholder="Address"
           className="border p-2 w-full rounded"
-          required
+          
         />
         <input
           name="email"
@@ -78,7 +78,7 @@ const ProfileUpdate = () => {
           onChange={handleChange}
           placeholder="Email"
           className="border p-2 w-full rounded"
-          required
+          
         />
         <input
           name="oldPassword"

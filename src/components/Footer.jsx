@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="text-center sm:text-left">
 
-            <div className="w-[100px] h-[100px]">
+            <div className="w-[300px] h-[300px]">
                 <img src="/logo.png" alt="" />
             </div>
             

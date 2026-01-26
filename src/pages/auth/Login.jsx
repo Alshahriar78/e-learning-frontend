@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { loginApi } from "../../api/auth.api";
 import { useNavigate } from "react-router-dom";
+import { getProfileApi } from "../../api/auth.api"; 
 
 const Login = ({ closeModal }) => {
   const [formData, setFormData] = useState({
@@ -29,11 +30,14 @@ const Login = ({ closeModal }) => {
 
     try {
       const res = await loginApi(payload); // pass trimmed & lowercased email
-      console.log("LOGIN SUCCESS:", res.data);
+      
 
       
       // JWT
       localStorage.setItem("isLogin", "true");
+      // Fetch user profile after login
+        const profileRes = await getProfileApi(); // your profile API
+       localStorage.setItem("userInfo", JSON.stringify(profileRes.data)); 
 
       closeModal();
       navigate("/dashboard"); 

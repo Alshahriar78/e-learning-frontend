@@ -10,33 +10,38 @@ import ShopPage from "./pages/ShopPage";
 import ProductDetails from "./pages/ProductDetails";
 import Courses from "./pages/Courses";
 import CourseDetails from "./pages/CourseDetails";
-import Profile from "./pages/Profile"
+import Profile from "./pages/Profile";
 import CourseStructure from "./pages/course/CourseStructure";
+import ProtectedRoute from "./components/ProtectedRoute"; // <--- import
 
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-    <Routes>
+      <Navbar /> {/* Navbar always visible, handles login button / My Account */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/courses" element={<Courses />} />
+        <Route path="/courses/:id" element={<CourseDetails />} />
+        <Route path="/shop" element={<ShopPage />} />
+        <Route path="/products/:id" element={<ProductDetails />} />
+        <Route path="/course/:courseId" element={<CourseStructure />} />
 
-      
-      <Route path="/" element={<Home />} />
-      <Route path="/courses" element={<Courses />} />
-      <Route path="/courses/:id" element={<CourseDetails />} />
-      <Route path="/shop" element={<ShopPage />} />
-      <Route path="/products/:id" element={<ProductDetails />} />
-
-      <Route path="/course/:courseId" element={<CourseStructure />} />
-
-      <Route path="/dashboard" element={<Dashboard />}>
-         <Route path="profile" element={<Profile />} />
+        {/* Dashboard protected */}
+        <Route
+          path="/dashboard/*"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        >
+          <Route path="profile" element={<Profile />} />
           <Route path="profileUpdate" element={<ProfileUpdate />} />
           <Route path="courses" element={<MyCourses />} />
-        
           <Route path="products" element={<MyProducts />} />
           <Route path="certificates" element={<Certificates />} />
         </Route>
-    </Routes>
+      </Routes>
     </BrowserRouter>
   );
 }
