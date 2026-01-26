@@ -23,13 +23,14 @@ const CourseStructure = () => {
     fetchStructure();
   }, [courseId]);
 
-  if (loading) return <p className="text-center mt-10">Loading course...</p>;
+  if (loading) {
+    return <p className="text-center mt-10">Loading course...</p>;
+  }
 
   return (
-    <div className="flex gap-6">
-      
-      
-      <div className="w-1/4 bg-white p-4 rounded shadow">
+    <div className="flex flex-col md:flex-row gap-4 md:gap-6">
+      {/* LEFT: COURSE CONTENT */}
+      <div className="w-full md:w-1/4 bg-white p-4 rounded shadow max-h-[500px] md:max-h-[calc(100vh-120px)] overflow-y-auto">
         <h2 className="font-bold mb-4">Course Content</h2>
 
         {modules.map((module) => (
@@ -43,7 +44,11 @@ const CourseStructure = () => {
                 <li
                   key={video._id}
                   onClick={() => setActiveVideo(video)}
-                  className="cursor-pointer text-sm hover:text-blue-600"
+                  className={`cursor-pointer text-sm hover:text-blue-600 ${
+                    activeVideo?._id === video._id
+                      ? "text-blue-600 font-semibold"
+                      : ""
+                  }`}
                 >
                   ▶ {video.title}
                 </li>
@@ -54,20 +59,22 @@ const CourseStructure = () => {
       </div>
 
       {/* RIGHT: VIDEO PLAYER */}
-      <div className="flex-1 bg-white p-6 rounded shadow">
+      <div className="flex-1 bg-white p-4 md:p-6 rounded shadow">
         {activeVideo ? (
           <>
-            <h2 className="text-xl font-bold mb-4">
+            <h2 className="text-lg md:text-xl font-bold mb-4">
               {activeVideo.title}
             </h2>
 
-            <iframe
-                className="w-full h-[420px] rounded"
+            <div className="relative w-full pb-[56.25%]">
+              <iframe
+                className="absolute top-0 left-0 w-full h-full rounded"
                 src={activeVideo.videoUrl.replace("watch?v=", "embed/")}
                 title={activeVideo.title}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-            />
+              />
+            </div>
           </>
         ) : (
           <p className="text-center text-gray-500 mt-20">

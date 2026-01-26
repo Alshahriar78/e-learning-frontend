@@ -35,7 +35,6 @@ const MyCourses = () => {
             className="bg-white p-4 rounded shadow cursor-pointer hover:shadow-lg transition"
             // onClick={() => navigate(`/course/${order.productId}`)}
             onClick={() => {
-  console.log("Course ID:", order.product._id);
   navigate(`/course/${order.product._id}`);
 }}
           >
