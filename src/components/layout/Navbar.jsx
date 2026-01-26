@@ -141,15 +141,9 @@ export const Navbar = () => {
       {showAccount && isLogin && (
         <div className="absolute right-4 top-20 bg-white shadow-lg rounded-lg p-5 w-64 z-50">
           <h3 className="font-bold text-lg mb-2">Account Info</h3>
-          <p>
-            <strong>Username:</strong> {userInfo.profile.name || "N/A"}
-          </p>
-          <p>
-            <strong>Email:</strong> {userInfo.profile.email || "N/A"}
-          </p>
-          <p>
-            <strong>Phone:</strong> {userInfo.profile.phone || "N/A"}
-          </p>
+          <p><strong>Username:</strong> {userInfo?.profile?.name || userInfo?.username || "N/A"}</p>
+         <p><strong>Email:</strong> {userInfo?.profile?.email || userInfo?.email || "N/A"}</p>
+         <p><strong>Phone:</strong> {userInfo?.profile?.phone || userInfo?.phone || "N/A"}</p>
           <button
             className="mt-4 w-full bg-red-500 text-white py-2 rounded hover:bg-red-600"
             onClick={handleLogout}
