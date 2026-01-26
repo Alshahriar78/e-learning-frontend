@@ -11,6 +11,7 @@ import ProductDetails from "./pages/ProductDetails";
 import Courses from "./pages/Courses";
 import CourseDetails from "./pages/CourseDetails";
 import Profile from "./pages/Profile"
+import CourseStructure from "./pages/course/CourseStructure";
 
 function App() {
   return (
@@ -25,10 +26,13 @@ function App() {
       <Route path="/shop" element={<ShopPage />} />
       <Route path="/products/:id" element={<ProductDetails />} />
 
+      <Route path="/course/:courseId" element={<CourseStructure />} />
+
       <Route path="/dashboard" element={<Dashboard />}>
          <Route path="profile" element={<Profile />} />
           <Route path="profileUpdate" element={<ProfileUpdate />} />
           <Route path="courses" element={<MyCourses />} />
+        
           <Route path="products" element={<MyProducts />} />
           <Route path="certificates" element={<Certificates />} />
         </Route>
