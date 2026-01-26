@@ -36,7 +36,7 @@ const MyProducts = () => {
             onClick={() => navigate(`/course/${order.productId}`)}
           >
             <img
-              src={order.product.thumbnail}
+              src={order.product.image}
               alt={order.product.title}
               className="w-full h-40 object-cover rounded mb-2"
             />

@@ -62,10 +62,11 @@ const CourseStructure = () => {
             </h2>
 
             <iframe
-              className="w-full h-[420px] rounded"
-              src={activeVideo.videoUrl.replace("watch?v=", "embed/")}
-              title={activeVideo.title}
-              allowFullScreen
+                className="w-full h-[420px] rounded"
+                src={activeVideo.videoUrl.replace("watch?v=", "embed/")}
+                title={activeVideo.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
             />
           </>
         ) : (
