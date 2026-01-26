@@ -26,6 +26,11 @@ export const Navbar = () => {
     if (user) setUserInfo(user);
   }, []);
 
+  const handleLoginSuccess = (user) => {
+  setIsLogin(true);
+  setUserInfo(user);
+};
+
   const handleLogout = () => {
     localStorage.removeItem("isLogin");
     localStorage.removeItem("userInfo");

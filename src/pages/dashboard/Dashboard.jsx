@@ -6,7 +6,8 @@ const Dashboard = () => {
 
   // Card items
   const cards = [
-    { title: "Profile Edit", path: "/dashboard/profile" },
+    { title: "Profile Information", path: "/dashboard/profile" },
+     { title: "Profile Edit", path: "/dashboard/profileUpdate" },
     { title: "My Courses", path: "/dashboard/courses" },
     { title: "My Products", path: "/dashboard/products" },
     { title: "Certificates", path: "/dashboard/certificates" },
