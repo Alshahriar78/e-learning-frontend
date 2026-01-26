@@ -12,9 +12,7 @@ export default function Footer() {
             <div className="w-[100px] h-[100px]">
                 <img src="/public/logo.png" alt="" />
             </div>
-            {/* <h2 className="text-2xl md:text-3xl font-bold text-gray-900 flex items-center justify-center sm:justify-start gap-2">
-              E-learning <span className="w-3 h-3 bg-indigo-500 rounded-full inline-block" />
-            </h2> */}
+            
 
             <div className="flex items-center justify-center sm:justify-start gap-5 mt-6 text-2xl text-gray-900">
               <i className="fa-brands fa-facebook"></i>
@@ -35,17 +33,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Other */}
-          {/* <div className="text-center sm:text-left">
-            <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-4">Other</h3>
-            <ul className="space-y-2 md:space-y-3">
-              <li>About Us</li>
-              <li>Our Team</li>
-              <li>Career</li>
-              <li>Services</li>
-              <li>Contact</li>
-            </ul>
-          </div> */}
+        
 
           {/* Contact */}
           <div className="space-y-5 text-center sm:text-left">
@@ -68,7 +56,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-sky-200 mt-12 md:mt-16 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-center md:text-left">
-          <p>@2025 Agency. All Rights Reserved by GetNextJsTemplates.com</p>
+          <p>@2026 Copyright Real Time Solutions</p>
 
           {/* <div className="flex gap-4 sm:gap-6">
             <span>Privacy policy</span>
